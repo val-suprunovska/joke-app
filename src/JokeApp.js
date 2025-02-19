@@ -6,6 +6,7 @@ export default function JokeApp() {
   const [joke, setJoke] = useState(null);
   const [loading, setLoading] = useState(true);
   const [votes, setVotes] = useState({ "😂": 0, "👍": 0, "❤️": 0 });
+  const [userVote, setUserVote] = useState(null);
 
   const fetchJoke = async () => {
     setLoading(true);
@@ -13,6 +14,7 @@ export default function JokeApp() {
     setJoke(data);
     setLoading(false);
     setVotes({ "😂": 0, "👍": 0, "❤️": 0 });
+    setUserVote(null);
   };
 
   useEffect(() => {
@@ -20,10 +22,13 @@ export default function JokeApp() {
   }, []);
 
   const handleVote = (emoji) => {
+    if (userVote) return; // disable re-voting
+
     setVotes((prevVotes) => ({
       ...prevVotes,
       [emoji]: prevVotes[emoji] + 1,
     }));
+    setUserVote(emoji);
   };
 
   if (loading) return <p className="loading">Loading...</p>;
@@ -40,6 +45,7 @@ export default function JokeApp() {
               key={emoji}
               onClick={() => handleVote(emoji)}
               className="emoji-btn"
+              disabled={userVote !== null} // blocking buttons after voting
             >
               {emoji} {votes[emoji]}
             </button>
