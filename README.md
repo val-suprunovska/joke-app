@@ -26,5 +26,8 @@ npm start
 ## Key Features
 Fetch random jokes  
 Vote using emoji reactions (😂, 👍, ❤️)  
-Store data in MongoDB
+Store data in MongoDB  
 Limit to one vote per joke
+
+## Result 
+<img src="media/result.gif">
