@@ -104,3 +104,23 @@ body.active
                 inset 0 4px 4px rgba(255, 255, 255, 1),
                 inset 0 -4px 4px rgba(255, 255, 255, 1);
 }
+
+/* ======================================================== */
+/* mobile-responsive */
+
+@media (max-width: 1199.98px){
+  [class*="container"] {
+      max-width: 970px;
+  }
+}
+@media (max-width: 990.98px){
+  [class*="container"] {
+      max-width: 750px;
+  }
+}
+@media (max-width: 767.98px){
+  [class*="container"] {
+      max-width: none;
+      padding: 0px 15px;
+  }
+}
