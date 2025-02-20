@@ -111,6 +111,9 @@ body.active
 @media (max-width: 1199.98px){
   [class*="container"] {
       max-width: 970px;
+      margin-left: 100px;
+      margin-right: 100px;
+      margin-bottom: 30px;
   }
 }
 @media (max-width: 990.98px){
@@ -122,5 +125,7 @@ body.active
   [class*="container"] {
       max-width: none;
       padding: 0px 15px;
+      margin: 0;
+      margin-bottom: 50px;
   }
 }
